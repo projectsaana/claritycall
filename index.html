@@ -30,7 +30,6 @@
     html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body { font-family: 'DM Sans', sans-serif; background: var(--offwhite); color: var(--dark); overflow-x: hidden; line-height: 1.6; }
 
-    /* NAV */
     nav { position: sticky; top: 0; z-index: 200; background: rgba(254,252,252,.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--crimson-border); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 13px 22px; max-width: 560px; margin: 0 auto; }
     .nav-logo { display: flex; align-items: center; gap: 8px; font-family: 'Playfair Display', serif; font-size: .98rem; font-weight: 700; color: var(--dark); text-decoration: none; }
@@ -38,20 +37,17 @@
     .nav-cta { background: var(--crimson); color: #fff; border: none; border-radius: var(--radius-pill); padding: 9px 20px; font-family: 'DM Sans', sans-serif; font-size: .85rem; font-weight: 600; cursor: pointer; transition: background .18s, transform .15s; }
     .nav-cta:hover { background: var(--crimson-hover); transform: translateY(-1px); }
 
-    /* HERO */
     .hero { padding: 52px 22px 36px; max-width: 560px; margin: 0 auto; }
     .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--crimson-pale); border: 1px solid var(--crimson-border); border-radius: var(--radius-pill); padding: 5px 14px; font-size: .72rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--crimson); margin-bottom: 18px; }
     .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3.2rem, 12vw, 5rem); font-weight: 900; line-height: .93; color: var(--crimson); letter-spacing: -.03em; margin-bottom: 18px; }
     .hero-sub { font-size: 1.02rem; color: var(--mid); line-height: 1.6; max-width: 320px; }
 
-    /* PHOTO */
     .photo-section { padding: 0 22px; max-width: 560px; margin: 28px auto 0; }
     .photo-card { border-radius: var(--radius-lg); overflow: hidden; background: linear-gradient(150deg,#f9e9ea,#fcdfe1); aspect-ratio: 16/10; position: relative; display: flex; align-items: center; justify-content: center; background-image: url('saana.jpg'); background-size: cover; background-position: center top; }
     .photo-quote { position: absolute; bottom: 16px; left: 16px; right: 16px; background: rgba(255,255,255,.88); backdrop-filter: blur(8px); border-radius: 14px; padding: 14px 18px; border-left: 3px solid var(--crimson); }
     .photo-quote p { font-size: .88rem; font-style: italic; color: var(--mid); line-height: 1.5; }
     .photo-quote span { display: block; font-size: .73rem; font-style: normal; font-weight: 600; color: var(--crimson); margin-top: 6px; }
 
-    /* BOOK CTA */
     .book-cta { padding: 24px 22px 0; max-width: 560px; margin: 0 auto; }
     .btn-book { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: var(--crimson); color: #fff; border: none; border-radius: var(--radius-pill); padding: 19px 32px; font-family: 'DM Sans', sans-serif; font-size: 1.06rem; font-weight: 600; cursor: pointer; transition: background .18s, transform .15s, box-shadow .18s; box-shadow: var(--shadow-btn); }
     .btn-book:hover { background: var(--crimson-hover); transform: translateY(-2px); }
@@ -59,7 +55,6 @@
     .meta-pill { display: inline-flex; align-items: center; gap: 5px; background: var(--crimson-pale); border: 1px solid var(--crimson-border); border-radius: var(--radius-pill); padding: 5px 13px; font-size: .76rem; font-weight: 600; color: var(--mid); letter-spacing: .04em; text-transform: uppercase; }
     .meta-pill svg { color: var(--crimson); }
 
-    /* SECTIONS */
     .section { padding: 56px 22px; max-width: 560px; margin: 0 auto; }
     .section-tag { display: inline-block; background: var(--crimson-pale); color: var(--crimson); border-radius: var(--radius-pill); padding: 3px 12px; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; }
     h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.55rem,5vw,2.1rem); font-weight: 700; color: var(--dark); line-height: 1.2; margin-bottom: 16px; letter-spacing: -.02em; }
@@ -104,14 +99,12 @@
     footer a { color: var(--crimson); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
-    /* WHATSAPP */
     .wa-fab { position: fixed; bottom: 24px; right: 20px; z-index: 300; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(37,211,102,.42); text-decoration: none; transition: transform .2s; animation: pulse-wa 2.4s ease-in-out infinite; }
     .wa-fab:hover { transform: scale(1.1); animation: none; }
     @keyframes pulse-wa { 0%,100% { box-shadow: 0 6px 24px rgba(37,211,102,.42); } 50% { box-shadow: 0 6px 32px rgba(37,211,102,.7); } }
     .wa-tooltip { position: absolute; right: 66px; top: 50%; transform: translateY(-50%); background: var(--dark); color: #fff; border-radius: 8px; padding: 6px 12px; font-size: .78rem; font-weight: 500; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .2s; }
     .wa-fab:hover .wa-tooltip { opacity: 1; }
 
-    /* MODAL */
     .overlay { display: none; position: fixed; inset: 0; background: rgba(24,10,11,.6); z-index: 400; align-items: flex-end; justify-content: center; }
     .overlay.open { display: flex; }
     .modal { background: var(--white); border-radius: 28px 28px 0 0; padding: 32px 24px 40px; width: 100%; max-width: 560px; animation: slideUp .32s cubic-bezier(.22,1,.36,1); max-height: 94vh; overflow-y: auto; }
@@ -119,7 +112,6 @@
     @keyframes slideUp { from { transform: translateY(60px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
     .modal-handle { width: 40px; height: 4px; background: var(--crimson-border); border-radius: 2px; margin: 0 auto 22px; }
 
-    /* STEPS BAR */
     .steps-bar { display: flex; align-items: center; margin-bottom: 24px; }
     .step-item { display: flex; align-items: center; gap: 6px; font-size: .76rem; font-weight: 600; color: var(--soft); white-space: nowrap; }
     .step-item.active { color: var(--crimson); }
@@ -127,7 +119,6 @@
     .step-num { width: 22px; height: 22px; border-radius: 50%; border: 2px solid currentColor; display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; flex-shrink: 0; }
     .step-line { flex: 1; height: 1px; background: var(--crimson-border); margin: 0 6px; }
 
-    /* FORM */
     .modal h3 { font-family: 'Playfair Display', serif; font-size: 1.45rem; color: var(--dark); margin-bottom: 4px; }
     .modal-sub { font-size: .86rem; color: var(--soft); margin-bottom: 20px; }
     .form-row { margin-bottom: 13px; }
@@ -144,7 +135,6 @@
     .btn-next { flex: 2; padding: 13px; border: none; border-radius: var(--radius-pill); background: var(--crimson); color: #fff; font-family: 'DM Sans', sans-serif; font-size: .95rem; font-weight: 600; cursor: pointer; transition: background .18s; display: flex; align-items: center; justify-content: center; gap: 6px; }
     .btn-next:hover { background: var(--crimson-hover); }
 
-    /* UPI STEP */
     .upi-view { display: none; }
     .upi-amount-row { text-align: center; margin-bottom: 18px; }
     .upi-amount { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--crimson); }
@@ -165,19 +155,8 @@
     .upi-step:last-child { border-bottom: none; }
     .upi-step-num { width: 20px; height: 20px; border-radius: 50%; background: var(--crimson); color: white; display: flex; align-items: center; justify-content: center; font-size: .68rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 
-    /* UPLOAD */
-    .upload-section { margin-top: 18px; }
-    .upload-label { display: block; font-size: .79rem; font-weight: 600; color: var(--mid); margin-bottom: 7px; }
-    .upload-area { border: 2px dashed var(--crimson-border); border-radius: 14px; padding: 22px 16px; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; background: var(--offwhite); position: relative; }
-    .upload-area:hover, .upload-area.dragover { border-color: var(--crimson); background: var(--crimson-pale); }
-    .upload-area input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
-    .upload-icon { font-size: 2rem; margin-bottom: 6px; }
-    .upload-text { font-size: .83rem; color: var(--soft); line-height: 1.5; }
-    .upload-text strong { color: var(--crimson); }
-    .upload-preview { display: none; margin-top: 10px; }
-    .upload-preview img { width: 100%; max-height: 150px; object-fit: cover; border-radius: 10px; border: 1px solid var(--crimson-border); }
-    .upload-preview-name { font-size: .76rem; color: #2a7a2a; margin-top: 5px; text-align: center; font-weight: 600; }
-    .upload-error { display: none; color: var(--crimson); font-size: .75rem; margin-top: 5px; }
+    /* Transaction ID field styling */
+    .form-hint { font-size: 0.7rem; color: var(--soft); margin-top: 4px; }
 
     .btn-confirm-pay { width: 100%; margin-top: 16px; padding: 16px; border: none; border-radius: var(--radius-pill); background: var(--crimson); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background .18s; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: var(--shadow-btn); }
     .btn-confirm-pay:hover { background: var(--crimson-hover); }
@@ -187,7 +166,6 @@
     .wa-help { text-align: center; font-size: .75rem; color: var(--soft); margin-top: 10px; }
     .wa-help a { color: var(--crimson); }
 
-    /* SUCCESS */
     .success-view { text-align: center; padding: 8px 0; display: none; }
     .success-icon { width: 72px; height: 72px; background: #edf7ed; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
     .success-view h3 { color: #1e6b1e; font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 8px; }
@@ -199,11 +177,9 @@
     .success-row span:last-child { font-weight: 600; color: var(--dark); }
     .btn-done { margin-top: 6px; width: 100%; padding: 15px; border: none; border-radius: var(--radius-pill); background: var(--crimson); color: #fff; font-family: 'DM Sans', sans-serif; font-size: .96rem; font-weight: 600; cursor: pointer; box-shadow: var(--shadow-btn); }
 
-    /* REVEAL */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
     .reveal.in { opacity: 1; transform: translateY(0); }
 
-    /* DESKTOP */
     @media (min-width: 640px) { .for-section { margin: 0 24px; } .final-block { margin: 0 24px; } }
     @media (min-width: 900px) {
       body { background: #f6eeee; }
@@ -223,7 +199,6 @@
 <body>
 <div class="site-frame">
 
-  <!-- NAV -->
   <nav>
     <div class="nav-inner">
       <a class="nav-logo" href="/"><span class="logo-star">✦</span> Project Saana</a>
@@ -231,7 +206,6 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <div class="hero">
     <div class="hero-left">
       <div class="hero-badge">✦ Project Saana</div>
@@ -246,7 +220,6 @@
     </div>
   </div>
 
-  <!-- PHOTO MOBILE -->
   <div class="photo-section reveal" id="mobilePhoto">
     <div class="photo-card">
       <img src="saana.jpg" alt="Saana" style="width:100%;height:100%;object-fit:cover;object-position:top;position:absolute;inset:0;">
@@ -254,7 +227,6 @@
     </div>
   </div>
 
-  <!-- BOOK CTA -->
   <div class="book-cta reveal" style="margin-top:26px;">
     <button class="btn-book" onclick="openModal()">Book Your Call <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
     <div class="meta-pills">
@@ -264,7 +236,6 @@
     </div>
   </div>
 
-  <!-- WHAT IS -->
   <div class="section reveal">
     <div class="section-tag">About</div>
     <h2>What is a Clarity Call?</h2>
@@ -272,7 +243,6 @@
     <p class="body-text" style="margin-top:12px;">Saana listens deeply, identifies hidden emotional patterns, and helps you formulate one actionable next step to move forward with confidence.</p>
   </div>
 
-  <!-- WHAT WE DO -->
   <div class="section reveal" style="padding-top:0">
     <div class="section-tag">The Call</div>
     <h2>What we do in the call</h2>
@@ -284,7 +254,6 @@
     </ul>
   </div>
 
-  <!-- WHO -->
   <div class="section reveal" style="padding:0 0 56px;">
     <div class="for-section">
       <div class="section-tag">Who it's for</div>
@@ -298,7 +267,6 @@
     </div>
   </div>
 
-  <!-- DETAILS -->
   <div class="section reveal" style="padding-top:0;padding-bottom:56px;">
     <div class="details-bar">
       <div class="detail-cell"><svg class="detail-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div class="detail-label">Duration</div><div class="detail-value">20 min</div></div>
@@ -307,7 +275,6 @@
     </div>
   </div>
 
-  <!-- TESTIMONIALS -->
   <div class="section reveal" style="padding-top:0">
     <div class="section-tag">Stories</div>
     <h2>What people say</h2>
@@ -318,7 +285,6 @@
     <p class="coming-soon">More client stories arriving soon…</p>
   </div>
 
-  <!-- FINAL CTA -->
   <div class="section reveal" style="padding-top:0;padding-bottom:72px;">
     <div class="final-block">
       <h2>Talk to Saana</h2>
@@ -327,7 +293,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-logo">✦ Saana</div>
     <p>© 2024 Project Saana. All rights reserved.</p>
@@ -336,13 +301,12 @@
   </footer>
 </div>
 
-<!-- WHATSAPP FAB -->
 <a class="wa-fab" href="https://wa.me/918668324650?text=Hi%20Saana%2C%20I%20want%20to%20book%20a%20Clarity%20Call!" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg width="28" height="28" viewBox="0 0 32 32" fill="white"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.484.676 4.81 1.854 6.807L2 30l7.393-1.837A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm7.2 19.2c-.3.84-1.74 1.62-2.4 1.68-.66.06-1.26.3-4.26-.9-3.6-1.44-5.88-5.1-6.06-5.34-.18-.24-1.44-1.92-1.44-3.66 0-1.74.9-2.58 1.24-2.94.34-.36.72-.45 1-.45h.72c.24 0 .54-.06.84.66l1.08 2.64c.12.24.06.54-.06.78l-.6.9-.18.24c.24.42 1.02 1.68 2.1 2.58 1.38 1.14 2.52 1.5 2.94 1.68.3.12.66.06.9-.18l.66-.78c.24-.3.48-.24.84-.12l2.58 1.2c.3.12.54.3.54.6v.12z"/></svg>
   <span class="wa-tooltip">Chat on WhatsApp</span>
 </a>
 
-<!-- ════════ MODAL ════════ -->
+<!-- MODAL -->
 <div class="overlay" id="overlay" role="dialog" aria-modal="true">
   <div class="modal">
     <div class="modal-handle"></div>
@@ -397,7 +361,7 @@
       </div>
     </div>
 
-    <!-- STEP 2: UPI PAYMENT -->
+    <!-- STEP 2: UPI PAYMENT + Transaction ID -->
     <div class="upi-view" id="stepPayment">
       <div class="steps-bar">
         <div class="step-item done"><div class="step-num">✓</div> Details</div>
@@ -429,23 +393,19 @@
           <div class="upi-step"><div class="upi-step-num">1</div>Open any UPI app (GPay, PhonePe, Paytm…)</div>
           <div class="upi-step"><div class="upi-step-num">2</div>Scan QR code above OR enter the UPI ID manually</div>
           <div class="upi-step"><div class="upi-step-num">3</div>Enter amount <strong>₹499</strong> → Pay to <strong>Project Saana</strong></div>
-          <div class="upi-step"><div class="upi-step-num">4</div>Take a screenshot of the payment success screen</div>
-          <div class="upi-step"><div class="upi-step-num">5</div>Upload that screenshot below to confirm your booking ↓</div>
+          <div class="upi-step"><div class="upi-step-num">4</div>After successful payment, copy the <strong>Transaction ID</strong> from your UPI app</div>
+          <div class="upi-step"><div class="upi-step-num">5</div>Paste the Transaction ID below to confirm your booking ↓</div>
         </div>
       </div>
 
-      <div class="upload-section">
-        <label class="upload-label">📸 Upload Payment Screenshot *</label>
-        <div class="upload-area" id="uploadArea">
-          <input type="file" id="screenshotInput" accept="image/*" onchange="handleFile(this)" />
-          <div class="upload-icon">📸</div>
-          <div class="upload-text">Tap here to upload your screenshot<br><strong>JPG or PNG</strong></div>
+      <!-- Transaction ID field instead of file upload -->
+      <div class="form-row" id="rowTxnId">
+        <label for="inputTxnId">🔢 UPI Transaction ID (after payment) *</label>
+        <input type="text" id="inputTxnId" placeholder="e.g. 1234567890123456" />
+        <div class="form-error">Please enter the UPI Transaction ID from your payment app.</div>
+        <div class="form-hint">
+          You'll find this in your GPay/PhonePe/Paytm transaction history.
         </div>
-        <div class="upload-preview" id="uploadPreview">
-          <img id="previewImg" src="" alt="Payment screenshot" />
-          <div class="upload-preview-name" id="previewName"></div>
-        </div>
-        <div class="upload-error" id="uploadError">Please upload your payment screenshot to confirm.</div>
       </div>
 
       <button class="btn-confirm-pay" id="confirmBtn" onclick="submitBooking()">
@@ -473,7 +433,6 @@
   const FORMSPREE = 'https://formspree.io/f/xvzvkkjq';
 
   let bookingData = {};
-  let screenshotFile = null;
   let qrDone = false;
 
   /* Desktop photo */
@@ -563,38 +522,15 @@
     });
   }
 
-  /* File upload */
-  function handleFile(input) {
-    const file = input.files[0];
-    if (!file) return;
-    screenshotFile = file;
-    const reader = new FileReader();
-    reader.onload = e => {
-      document.getElementById('previewImg').src = e.target.result;
-      document.getElementById('previewName').textContent = '✓ ' + file.name;
-      document.getElementById('uploadPreview').style.display = 'block';
-      document.getElementById('uploadArea').style.borderColor = '#2a7a2a';
-      document.getElementById('uploadArea').style.background = '#edf7ed';
-      document.getElementById('uploadError').style.display = 'none';
-    };
-    reader.readAsDataURL(file);
-  }
-
-  const ua = document.getElementById('uploadArea');
-  ua.addEventListener('dragover', e => { e.preventDefault(); ua.classList.add('dragover'); });
-  ua.addEventListener('dragleave', () => ua.classList.remove('dragover'));
-  ua.addEventListener('drop', e => {
-    e.preventDefault(); ua.classList.remove('dragover');
-    const f = e.dataTransfer.files[0];
-    if (f && f.type.startsWith('image/')) { screenshotFile = f; handleFile({ files: [f] }); }
-  });
-
-  /* Submit */
+  /* Submit booking with Transaction ID (no file) */
   async function submitBooking() {
-    if (!screenshotFile) {
-      document.getElementById('uploadError').style.display = 'block';
+    const txnId = document.getElementById('inputTxnId').value.trim();
+    if (!txnId) {
+      document.getElementById('rowTxnId').classList.add('has-error');
       return;
     }
+    document.getElementById('rowTxnId').classList.remove('has-error');
+
     const btn = document.getElementById('confirmBtn');
     document.getElementById('confirmText').style.display = 'none';
     document.getElementById('confirmSpinner').style.display = 'block';
@@ -607,25 +543,27 @@
       fd.append('whatsapp',       bookingData.phone);
       fd.append('preferred_slot', bookingData.slot);
       fd.append('note',           bookingData.note);
-      fd.append('_subject',       `💳 New Paid Booking — ${bookingData.name}`);
+      fd.append('upi_txn_id',     txnId);
+      fd.append('_subject',       `✅ New Paid Booking — ${bookingData.name}`);
       fd.append('payment_method', 'UPI');
       fd.append('amount_paid',    '₹499');
-      fd.append('attachment',     screenshotFile, screenshotFile.name);
 
-      const res = await fetch(FORMSPREE, { method:'POST', body: fd, headers:{ Accept:'application/json' } });
+      const res = await fetch(FORMSPREE, { method: 'POST', body: fd, headers: { Accept: 'application/json' } });
 
       if (res.ok) {
         document.getElementById('successDetails').innerHTML = `
           <div class="success-row"><span>Name</span><span>${bookingData.name}</span></div>
           <div class="success-row"><span>Slot booked</span><span>${bookingData.slot}</span></div>
           <div class="success-row"><span>Amount paid</span><span style="color:#2a7a2a">₹499 ✓</span></div>
+          <div class="success-row"><span>UPI TXN ID</span><span>${txnId}</span></div>
           <div class="success-row"><span>WhatsApp</span><span>${bookingData.phone}</span></div>
         `;
         show('stepSuccess');
       } else {
         alert('Something went wrong. Please message Saana on WhatsApp directly.');
       }
-    } catch {
+    } catch (err) {
+      console.error(err);
       alert('Network error. Please check your connection and try again.');
     } finally {
       document.getElementById('confirmText').style.display = 'inline';
