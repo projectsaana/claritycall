@@ -3,726 +3,268 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- ── SEO ── -->
   <title>Clarity Call with Saana | 20-Min Life Coaching Session | ₹499</title>
   <meta name="description" content="A 20-minute online conversation with Saana to help you find clarity, untangle your thoughts, and take one clear next step. Book your Clarity Call for ₹499." />
   <meta name="keywords" content="clarity call, life coaching India, emotional clarity, Saana, Project Saana, overthinking, life direction, online coaching" />
   <meta name="author" content="Project Saana" />
   <link rel="canonical" href="https://urvashisaana.com/" />
-
-  <!-- ── Open Graph (WhatsApp / Social sharing preview) ── -->
   <meta property="og:title" content="Clarity Call with Saana — 20 mins · Online · ₹499" />
   <meta property="og:description" content="Feeling stuck, overwhelmed, or lost? Book a 20-min Clarity Call with Saana and walk away with one clear next step." />
   <meta property="og:url" content="https://urvashisaana.com/" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://projectsaana.github.io/claritycall/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- ── Favicon (simple emoji fallback) ── -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
-
-  <!-- ── Fonts ── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
   <style>
-    /* ════════════════════════════════
-       RESET & VARIABLES
-    ════════════════════════════════ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --crimson:        #C0212C;
-      --crimson-hover:  #e0323e;
-      --crimson-pale:   #fdf2f2;
-      --crimson-border: #f0cdd0;
-      --dark:           #180a0b;
-      --mid:            #5c3a3d;
-      --soft:           #9a7a7d;
-      --offwhite:       #fefcfc;
-      --white:          #ffffff;
-      --card:           #fffafa;
-      --radius-lg:      22px;
-      --radius-pill:    999px;
-      --shadow-card:    0 2px 24px rgba(192,33,44,.08);
-      --shadow-btn:     0 6px 28px rgba(192,33,44,.32);
+      --crimson: #C0212C; --crimson-hover: #e0323e; --crimson-pale: #fdf2f2;
+      --crimson-border: #f0cdd0; --dark: #180a0b; --mid: #5c3a3d; --soft: #9a7a7d;
+      --offwhite: #fefcfc; --white: #ffffff; --card: #fffafa;
+      --radius-lg: 22px; --radius-pill: 999px; --shadow-btn: 0 6px 28px rgba(192,33,44,.32);
     }
-
     html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--offwhite); color: var(--dark); overflow-x: hidden; line-height: 1.6; }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--offwhite);
-      color: var(--dark);
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
-
-    /* ════════════════════════════════
-       UTILITY
-    ════════════════════════════════ */
-    .container {
-      width: 100%;
-      max-width: 560px;
-      margin: 0 auto;
-      padding: 0 22px;
-    }
-    .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
-
-    /* ════════════════════════════════
-       STICKY NAV
-    ════════════════════════════════ */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 200;
-      background: rgba(254,252,252,.94);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--crimson-border);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 13px 22px;
-      max-width: 560px;
-      margin: 0 auto;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Playfair Display', serif;
-      font-size: .98rem;
-      font-weight: 700;
-      color: var(--dark);
-      text-decoration: none;
-      letter-spacing: -.01em;
-    }
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 200; background: rgba(254,252,252,.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--crimson-border); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 13px 22px; max-width: 560px; margin: 0 auto; }
+    .nav-logo { display: flex; align-items: center; gap: 8px; font-family: 'Playfair Display', serif; font-size: .98rem; font-weight: 700; color: var(--dark); text-decoration: none; }
     .logo-star { color: var(--crimson); font-size: 1.1rem; }
-    .nav-cta {
-      background: var(--crimson);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius-pill);
-      padding: 9px 20px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: .85rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background .18s, transform .15s;
-      letter-spacing: .01em;
-    }
+    .nav-cta { background: var(--crimson); color: #fff; border: none; border-radius: var(--radius-pill); padding: 9px 20px; font-family: 'DM Sans', sans-serif; font-size: .85rem; font-weight: 600; cursor: pointer; transition: background .18s, transform .15s; }
     .nav-cta:hover { background: var(--crimson-hover); transform: translateY(-1px); }
 
-    /* ════════════════════════════════
-       HERO
-    ════════════════════════════════ */
-    .hero {
-      padding: 52px 22px 36px;
-      max-width: 560px;
-      margin: 0 auto;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--crimson-pale);
-      border: 1px solid var(--crimson-border);
-      border-radius: var(--radius-pill);
-      padding: 5px 14px;
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-      color: var(--crimson);
-      margin-bottom: 18px;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3.2rem, 12vw, 5rem);
-      font-weight: 900;
-      line-height: .93;
-      color: var(--crimson);
-      letter-spacing: -.03em;
-      margin-bottom: 18px;
-    }
-    .hero-sub {
-      font-size: 1.02rem;
-      color: var(--mid);
-      line-height: 1.6;
-      max-width: 320px;
-      margin-bottom: 0;
-    }
+    /* HERO */
+    .hero { padding: 52px 22px 36px; max-width: 560px; margin: 0 auto; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--crimson-pale); border: 1px solid var(--crimson-border); border-radius: var(--radius-pill); padding: 5px 14px; font-size: .72rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--crimson); margin-bottom: 18px; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3.2rem, 12vw, 5rem); font-weight: 900; line-height: .93; color: var(--crimson); letter-spacing: -.03em; margin-bottom: 18px; }
+    .hero-sub { font-size: 1.02rem; color: var(--mid); line-height: 1.6; max-width: 320px; }
 
-    /* ════════════════════════════════
-       PHOTO CARD
-    ════════════════════════════════ */
-    .photo-section {
-      padding: 0 22px;
-      max-width: 560px;
-      margin: 28px auto 0;
-    }
-    .photo-card {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      background: linear-gradient(150deg, #f9e9ea 0%, #fcdfe1 100%);
-      aspect-ratio: 16/10;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    /* If you upload a real photo named saana.jpg into your GitHub repo,
-       uncomment and update the line below: */
-    .photo-card { background-image: url('saana.jpg'); background-size: cover; background-position: center top; }
-    .photo-graphic {
-      opacity: .22;
-    }
-    .photo-quote {
-      position: absolute;
-      bottom: 16px;
-      left: 16px;
-      right: 16px;
-      background: rgba(255,255,255,.88);
-      backdrop-filter: blur(8px);
-      border-radius: 14px;
-      padding: 14px 18px;
-      border-left: 3px solid var(--crimson);
-    }
-    .photo-quote p {
-      font-size: .88rem;
-      font-style: italic;
-      color: var(--mid);
-      line-height: 1.5;
-    }
-    .photo-quote span {
-      display: block;
-      font-size: .73rem;
-      font-style: normal;
-      font-weight: 600;
-      color: var(--crimson);
-      margin-top: 6px;
-      letter-spacing: .03em;
-    }
+    /* PHOTO */
+    .photo-section { padding: 0 22px; max-width: 560px; margin: 28px auto 0; }
+    .photo-card { border-radius: var(--radius-lg); overflow: hidden; background: linear-gradient(150deg,#f9e9ea,#fcdfe1); aspect-ratio: 16/10; position: relative; display: flex; align-items: center; justify-content: center; background-image: url('saana.jpg'); background-size: cover; background-position: center top; }
+    .photo-quote { position: absolute; bottom: 16px; left: 16px; right: 16px; background: rgba(255,255,255,.88); backdrop-filter: blur(8px); border-radius: 14px; padding: 14px 18px; border-left: 3px solid var(--crimson); }
+    .photo-quote p { font-size: .88rem; font-style: italic; color: var(--mid); line-height: 1.5; }
+    .photo-quote span { display: block; font-size: .73rem; font-style: normal; font-weight: 600; color: var(--crimson); margin-top: 6px; }
 
-    /* ════════════════════════════════
-       BOOK CTA
-    ════════════════════════════════ */
-    .book-cta {
-      padding: 24px 22px 0;
-      max-width: 560px;
-      margin: 0 auto;
-    }
-    .btn-book {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      background: var(--crimson);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius-pill);
-      padding: 19px 32px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.06rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background .18s, transform .15s, box-shadow .18s;
-      box-shadow: var(--shadow-btn);
-      letter-spacing: .01em;
-    }
-    .btn-book:hover { background: var(--crimson-hover); transform: translateY(-2px); box-shadow: 0 10px 36px rgba(192,33,44,.38); }
-    .btn-book:active { transform: translateY(0); }
-    .meta-pills {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-    .meta-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: var(--crimson-pale);
-      border: 1px solid var(--crimson-border);
-      border-radius: var(--radius-pill);
-      padding: 5px 13px;
-      font-size: .76rem;
-      font-weight: 600;
-      color: var(--mid);
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-    .meta-pill svg { color: var(--crimson); flex-shrink: 0; }
+    /* BOOK CTA */
+    .book-cta { padding: 24px 22px 0; max-width: 560px; margin: 0 auto; }
+    .btn-book { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: var(--crimson); color: #fff; border: none; border-radius: var(--radius-pill); padding: 19px 32px; font-family: 'DM Sans', sans-serif; font-size: 1.06rem; font-weight: 600; cursor: pointer; transition: background .18s, transform .15s, box-shadow .18s; box-shadow: var(--shadow-btn); }
+    .btn-book:hover { background: var(--crimson-hover); transform: translateY(-2px); }
+    .meta-pills { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
+    .meta-pill { display: inline-flex; align-items: center; gap: 5px; background: var(--crimson-pale); border: 1px solid var(--crimson-border); border-radius: var(--radius-pill); padding: 5px 13px; font-size: .76rem; font-weight: 600; color: var(--mid); letter-spacing: .04em; text-transform: uppercase; }
+    .meta-pill svg { color: var(--crimson); }
 
-    /* ════════════════════════════════
-       SECTIONS
-    ════════════════════════════════ */
+    /* SECTIONS */
     .section { padding: 56px 22px; max-width: 560px; margin: 0 auto; }
-    .section-tag {
-      display: inline-block;
-      background: var(--crimson-pale);
-      color: var(--crimson);
-      border-radius: var(--radius-pill);
-      padding: 3px 12px;
-      font-size: .7rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.55rem, 5vw, 2.1rem);
-      font-weight: 700;
-      color: var(--dark);
-      line-height: 1.2;
-      margin-bottom: 16px;
-      letter-spacing: -.02em;
-    }
+    .section-tag { display: inline-block; background: var(--crimson-pale); color: var(--crimson); border-radius: var(--radius-pill); padding: 3px 12px; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; }
+    h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.55rem,5vw,2.1rem); font-weight: 700; color: var(--dark); line-height: 1.2; margin-bottom: 16px; letter-spacing: -.02em; }
     .body-text { font-size: .97rem; color: var(--mid); line-height: 1.68; }
 
-    /* ── What we do ── */
     .do-list { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
-    .do-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 15px 18px;
-      background: var(--card);
-      border: 1px solid var(--crimson-border);
-      border-radius: 14px;
-      font-size: .96rem;
-      font-weight: 500;
-      color: var(--mid);
-      transition: border-color .2s, background .2s, transform .15s;
-      cursor: default;
-    }
+    .do-item { display: flex; align-items: center; gap: 14px; padding: 15px 18px; background: var(--card); border: 1px solid var(--crimson-border); border-radius: 14px; font-size: .96rem; font-weight: 500; color: var(--mid); transition: border-color .2s, background .2s, transform .15s; }
     .do-item:hover { border-color: var(--crimson); background: var(--crimson-pale); transform: translateX(4px); }
-    .check-dot {
-      width: 24px; height: 24px;
-      border-radius: 50%;
-      border: 2px solid var(--crimson);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      background: var(--crimson-pale);
-    }
+    .check-dot { width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--crimson); display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: var(--crimson-pale); }
 
-    /* ── Who this is for ── */
-    .for-section {
-      background: var(--crimson-pale);
-      border-radius: var(--radius-lg);
-      margin: 0 16px;
-      padding: 36px 26px;
-    }
+    .for-section { background: var(--crimson-pale); border-radius: var(--radius-lg); margin: 0 16px; padding: 36px 26px; }
     .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-    .tag {
-      background: #fff;
-      border: 1.5px solid var(--crimson-border);
-      color: var(--crimson);
-      border-radius: var(--radius-pill);
-      padding: 10px 20px;
-      font-size: .9rem;
-      font-weight: 500;
-      cursor: default;
-      transition: background .18s, color .18s, border-color .18s, transform .15s;
-    }
-    .tag:hover { background: var(--crimson); color: #fff; border-color: var(--crimson); transform: translateY(-2px); }
+    .tag { background: #fff; border: 1.5px solid var(--crimson-border); color: var(--crimson); border-radius: var(--radius-pill); padding: 10px 20px; font-size: .9rem; font-weight: 500; transition: background .18s, color .18s, transform .15s; }
+    .tag:hover { background: var(--crimson); color: #fff; transform: translateY(-2px); }
 
-    /* ── Details bar ── */
-    .details-bar {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 1px;
-      background: var(--crimson-border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      margin: 0 auto;
-    }
-    .detail-cell {
-      background: var(--white);
-      padding: 26px 12px;
-      text-align: center;
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-    }
+    .details-bar { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--crimson-border); border-radius: var(--radius-lg); overflow: hidden; }
+    .detail-cell { background: var(--white); padding: 26px 12px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
     .detail-icon { color: var(--crimson); }
     .detail-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--soft); font-weight: 600; }
     .detail-value { font-size: 1.08rem; font-weight: 700; color: var(--dark); }
 
-    /* ── Testimonials ── */
     .testimonials { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
-    .t-card {
-      background: var(--white);
-      border: 1px solid var(--crimson-border);
-      border-radius: var(--radius-lg);
-      padding: 22px 22px 18px;
-      transition: box-shadow .2s;
-    }
+    .t-card { background: var(--white); border: 1px solid var(--crimson-border); border-radius: var(--radius-lg); padding: 22px 22px 18px; transition: box-shadow .2s; }
     .t-card:hover { box-shadow: 0 8px 32px rgba(192,33,44,.1); }
     .t-quote { font-size: 2.8rem; font-family: 'Playfair Display', serif; color: var(--crimson-border); line-height: .5; margin-bottom: 10px; }
     .t-text { font-size: .94rem; font-style: italic; color: var(--mid); line-height: 1.62; }
     .t-author { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
-    .t-avatar {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: linear-gradient(135deg, #f5c6c8, #e8a0a4);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: .82rem; color: var(--crimson); flex-shrink: 0;
-    }
+    .t-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg,#f5c6c8,#e8a0a4); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .82rem; color: var(--crimson); flex-shrink: 0; }
     .t-name { font-weight: 600; font-size: .87rem; color: var(--dark); }
     .t-role { font-size: .76rem; color: var(--soft); }
     .coming-soon { text-align: center; color: var(--soft); font-size: .84rem; font-style: italic; margin-top: 12px; }
 
-    /* ── Final CTA block ── */
-    .final-block {
-      background: var(--dark);
-      border-radius: var(--radius-lg);
-      padding: 48px 28px;
-      text-align: center;
-      margin: 0 16px;
-      position: relative;
-      overflow: hidden;
-    }
-    .final-block::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 70% 20%, rgba(192,33,44,.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
+    .final-block { background: var(--dark); border-radius: var(--radius-lg); padding: 48px 28px; text-align: center; margin: 0 16px; position: relative; overflow: hidden; }
+    .final-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 20%,rgba(192,33,44,.18),transparent 70%); pointer-events: none; }
     .final-block h2 { color: #fff; margin-bottom: 10px; }
     .final-block p { color: rgba(255,255,255,.55); margin-bottom: 28px; }
-    .btn-book-dark {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--crimson);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius-pill);
-      padding: 18px 36px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background .18s, transform .15s;
-      box-shadow: 0 4px 28px rgba(192,33,44,.45);
-    }
+    .btn-book-dark { display: inline-flex; align-items: center; gap: 8px; background: var(--crimson); color: #fff; border: none; border-radius: var(--radius-pill); padding: 18px 36px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background .18s, transform .15s; box-shadow: 0 4px 28px rgba(192,33,44,.45); }
     .btn-book-dark:hover { background: var(--crimson-hover); transform: translateY(-2px); }
 
-    /* ════════════════════════════════
-       FOOTER
-    ════════════════════════════════ */
-    footer {
-      text-align: center;
-      padding: 36px 22px 52px;
-      color: var(--soft);
-      font-size: .8rem;
-      line-height: 1.8;
-    }
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--crimson);
-      margin-bottom: 8px;
-      display: flex; align-items: center; justify-content: center; gap: 6px;
-    }
+    footer { text-align: center; padding: 36px 22px 52px; color: var(--soft); font-size: .8rem; line-height: 1.8; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--crimson); margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 6px; }
     footer a { color: var(--crimson); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
-    /* ════════════════════════════════
-       WHATSAPP FAB
-    ════════════════════════════════ */
-    .wa-fab {
-      position: fixed;
-      bottom: 24px;
-      right: 20px;
-      z-index: 300;
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: #25D366;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 6px 24px rgba(37,211,102,.42);
-      text-decoration: none;
-      transition: transform .2s, box-shadow .2s;
-      animation: pulse-wa 2.4s ease-in-out infinite;
-    }
-    .wa-fab:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,.55); animation: none; }
-    @keyframes pulse-wa {
-      0%,100% { box-shadow: 0 6px 24px rgba(37,211,102,.42); }
-      50%      { box-shadow: 0 6px 32px rgba(37,211,102,.7); }
-    }
-    .wa-tooltip {
-      position: absolute;
-      right: 66px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: var(--dark);
-      color: #fff;
-      border-radius: 8px;
-      padding: 6px 12px;
-      font-size: .78rem;
-      font-weight: 500;
-      white-space: nowrap;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity .2s;
-    }
+    /* WHATSAPP */
+    .wa-fab { position: fixed; bottom: 24px; right: 20px; z-index: 300; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(37,211,102,.42); text-decoration: none; transition: transform .2s; animation: pulse-wa 2.4s ease-in-out infinite; }
+    .wa-fab:hover { transform: scale(1.1); animation: none; }
+    @keyframes pulse-wa { 0%,100% { box-shadow: 0 6px 24px rgba(37,211,102,.42); } 50% { box-shadow: 0 6px 32px rgba(37,211,102,.7); } }
+    .wa-tooltip { position: absolute; right: 66px; top: 50%; transform: translateY(-50%); background: var(--dark); color: #fff; border-radius: 8px; padding: 6px 12px; font-size: .78rem; font-weight: 500; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .2s; }
     .wa-fab:hover .wa-tooltip { opacity: 1; }
 
-    /* ════════════════════════════════
-       MODAL
-    ════════════════════════════════ */
-    .overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(24,10,11,.6);
-      z-index: 400;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 0;
-    }
+    /* MODAL */
+    .overlay { display: none; position: fixed; inset: 0; background: rgba(24,10,11,.6); z-index: 400; align-items: flex-end; justify-content: center; }
     .overlay.open { display: flex; }
-    .modal {
-      background: var(--white);
-      border-radius: 28px 28px 0 0;
-      padding: 32px 24px 40px;
-      width: 100%;
-      max-width: 560px;
-      animation: slideUp .32s cubic-bezier(.22,1,.36,1);
-      max-height: 92vh;
-      overflow-y: auto;
-    }
-    @media (min-width: 560px) {
-      .overlay { align-items: center; padding: 24px; }
-      .modal { border-radius: 28px; max-height: 88vh; }
-    }
+    .modal { background: var(--white); border-radius: 28px 28px 0 0; padding: 32px 24px 40px; width: 100%; max-width: 560px; animation: slideUp .32s cubic-bezier(.22,1,.36,1); max-height: 94vh; overflow-y: auto; }
+    @media (min-width: 560px) { .overlay { align-items: center; padding: 24px; } .modal { border-radius: 28px; } }
     @keyframes slideUp { from { transform: translateY(60px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
     .modal-handle { width: 40px; height: 4px; background: var(--crimson-border); border-radius: 2px; margin: 0 auto 22px; }
-    .modal h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--dark); margin-bottom: 4px; }
-    .modal-sub { font-size: .88rem; color: var(--soft); margin-bottom: 24px; }
 
-    /* Form */
-    .form-row { margin-bottom: 14px; }
-    .form-row label { display: block; font-size: .8rem; font-weight: 600; color: var(--mid); margin-bottom: 6px; letter-spacing: .02em; }
-    .form-row input,
-    .form-row select,
-    .form-row textarea {
-      width: 100%;
-      border: 1.5px solid var(--crimson-border);
-      border-radius: 12px;
-      padding: 13px 16px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: .95rem;
-      color: var(--dark);
-      background: var(--offwhite);
-      outline: none;
-      transition: border-color .18s;
-      -webkit-appearance: none;
-    }
-    .form-row input:focus,
-    .form-row select:focus,
-    .form-row textarea:focus { border-color: var(--crimson); background: #fff; }
-    .form-row textarea { resize: vertical; min-height: 72px; }
-    .form-error { font-size: .76rem; color: var(--crimson); margin-top: 4px; display: none; }
-    .form-row.has-error input,
-    .form-row.has-error select { border-color: var(--crimson); }
+    /* STEPS BAR */
+    .steps-bar { display: flex; align-items: center; margin-bottom: 24px; }
+    .step-item { display: flex; align-items: center; gap: 6px; font-size: .76rem; font-weight: 600; color: var(--soft); white-space: nowrap; }
+    .step-item.active { color: var(--crimson); }
+    .step-item.done { color: #2a7a2a; }
+    .step-num { width: 22px; height: 22px; border-radius: 50%; border: 2px solid currentColor; display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; flex-shrink: 0; }
+    .step-line { flex: 1; height: 1px; background: var(--crimson-border); margin: 0 6px; }
+
+    /* FORM */
+    .modal h3 { font-family: 'Playfair Display', serif; font-size: 1.45rem; color: var(--dark); margin-bottom: 4px; }
+    .modal-sub { font-size: .86rem; color: var(--soft); margin-bottom: 20px; }
+    .form-row { margin-bottom: 13px; }
+    .form-row label { display: block; font-size: .79rem; font-weight: 600; color: var(--mid); margin-bottom: 5px; }
+    .form-row input, .form-row select, .form-row textarea { width: 100%; border: 1.5px solid var(--crimson-border); border-radius: 12px; padding: 12px 15px; font-family: 'DM Sans', sans-serif; font-size: .94rem; color: var(--dark); background: var(--offwhite); outline: none; transition: border-color .18s; -webkit-appearance: none; }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--crimson); background: #fff; }
+    .form-row textarea { resize: vertical; min-height: 68px; }
+    .form-error { font-size: .75rem; color: var(--crimson); margin-top: 4px; display: none; }
+    .form-row.has-error input, .form-row.has-error select { border-color: var(--crimson); }
     .form-row.has-error .form-error { display: block; }
-
-    .modal-actions { display: flex; gap: 10px; margin-top: 20px; }
-    .btn-cancel {
-      flex: 1;
-      padding: 14px;
-      border: 1.5px solid var(--crimson-border);
-      border-radius: var(--radius-pill);
-      background: none;
-      font-family: 'DM Sans', sans-serif;
-      font-size: .94rem;
-      color: var(--mid);
-      cursor: pointer;
-      transition: background .18s;
-    }
+    .modal-actions { display: flex; gap: 10px; margin-top: 18px; }
+    .btn-cancel { flex: 1; padding: 13px; border: 1.5px solid var(--crimson-border); border-radius: var(--radius-pill); background: none; font-family: 'DM Sans', sans-serif; font-size: .93rem; color: var(--mid); cursor: pointer; transition: background .18s; }
     .btn-cancel:hover { background: var(--crimson-pale); }
-    .btn-submit {
-      flex: 2;
-      padding: 14px;
-      border: none;
-      border-radius: var(--radius-pill);
-      background: var(--crimson);
-      color: #fff;
-      font-family: 'DM Sans', sans-serif;
-      font-size: .96rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background .18s, transform .15s;
-      display: flex; align-items: center; justify-content: center; gap: 6px;
-    }
-    .btn-submit:hover { background: var(--crimson-hover); }
-    .btn-submit:disabled { opacity: .65; cursor: not-allowed; transform: none; }
+    .btn-next { flex: 2; padding: 13px; border: none; border-radius: var(--radius-pill); background: var(--crimson); color: #fff; font-family: 'DM Sans', sans-serif; font-size: .95rem; font-weight: 600; cursor: pointer; transition: background .18s; display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .btn-next:hover { background: var(--crimson-hover); }
 
-    /* Spinner */
-    .spinner {
-      width: 16px; height: 16px;
-      border: 2px solid rgba(255,255,255,.3);
-      border-top-color: #fff;
-      border-radius: 50%;
-      animation: spin .6s linear infinite;
-      display: none;
-    }
+    /* UPI STEP */
+    .upi-view { display: none; }
+    .upi-amount-row { text-align: center; margin-bottom: 18px; }
+    .upi-amount { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--crimson); }
+    .upi-amount-label { font-size: .82rem; color: var(--soft); margin-top: 2px; }
+    .upi-box { background: var(--crimson-pale); border: 1.5px solid var(--crimson-border); border-radius: 18px; padding: 22px 18px; text-align: center; }
+    .qr-wrapper { display: flex; justify-content: center; margin-bottom: 14px; }
+    #qrcode { display: inline-block; padding: 10px; background: white; border-radius: 12px; box-shadow: 0 2px 16px rgba(192,33,44,.1); }
+    #qrcode canvas, #qrcode img { display: block; border-radius: 6px; }
+    .upi-id-row { display: flex; align-items: center; justify-content: center; gap: 8px; background: white; border: 1px solid var(--crimson-border); border-radius: 10px; padding: 9px 14px; margin: 10px 0; }
+    .upi-id-text { font-size: .86rem; font-weight: 600; color: var(--dark); font-family: monospace; letter-spacing: .02em; }
+    .copy-btn { background: var(--crimson-pale); border: 1px solid var(--crimson-border); border-radius: 6px; padding: 4px 10px; font-size: .74rem; font-weight: 600; color: var(--crimson); cursor: pointer; transition: background .18s, color .18s; white-space: nowrap; }
+    .copy-btn:hover { background: var(--crimson); color: white; }
+    .upi-apps { display: flex; justify-content: center; gap: 18px; margin: 12px 0 6px; }
+    .upi-app { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: .7rem; color: var(--soft); font-weight: 500; }
+    .upi-app-icon { font-size: 1.6rem; }
+    .upi-steps-list { text-align: left; margin-top: 14px; }
+    .upi-step { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--crimson-border); font-size: .83rem; color: var(--mid); line-height: 1.4; }
+    .upi-step:last-child { border-bottom: none; }
+    .upi-step-num { width: 20px; height: 20px; border-radius: 50%; background: var(--crimson); color: white; display: flex; align-items: center; justify-content: center; font-size: .68rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* UPLOAD */
+    .upload-section { margin-top: 18px; }
+    .upload-label { display: block; font-size: .79rem; font-weight: 600; color: var(--mid); margin-bottom: 7px; }
+    .upload-area { border: 2px dashed var(--crimson-border); border-radius: 14px; padding: 22px 16px; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; background: var(--offwhite); position: relative; }
+    .upload-area:hover, .upload-area.dragover { border-color: var(--crimson); background: var(--crimson-pale); }
+    .upload-area input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+    .upload-icon { font-size: 2rem; margin-bottom: 6px; }
+    .upload-text { font-size: .83rem; color: var(--soft); line-height: 1.5; }
+    .upload-text strong { color: var(--crimson); }
+    .upload-preview { display: none; margin-top: 10px; }
+    .upload-preview img { width: 100%; max-height: 150px; object-fit: cover; border-radius: 10px; border: 1px solid var(--crimson-border); }
+    .upload-preview-name { font-size: .76rem; color: #2a7a2a; margin-top: 5px; text-align: center; font-weight: 600; }
+    .upload-error { display: none; color: var(--crimson); font-size: .75rem; margin-top: 5px; }
+
+    .btn-confirm-pay { width: 100%; margin-top: 16px; padding: 16px; border: none; border-radius: var(--radius-pill); background: var(--crimson); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background .18s; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: var(--shadow-btn); }
+    .btn-confirm-pay:hover { background: var(--crimson-hover); }
+    .btn-confirm-pay:disabled { opacity: .55; cursor: not-allowed; }
+    .spinner { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .6s linear infinite; display: none; }
     @keyframes spin { to { transform: rotate(360deg); } }
+    .wa-help { text-align: center; font-size: .75rem; color: var(--soft); margin-top: 10px; }
+    .wa-help a { color: var(--crimson); }
 
-    /* Success */
-    .success-view { text-align: center; padding: 12px 0; display: none; }
-    .success-icon {
-      width: 68px; height: 68px;
-      background: #edf7ed;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 18px;
-    }
-    .success-view h3 { color: #1e6b1e; font-family: 'Playfair Display', serif; margin-bottom: 8px; }
-    .success-view p { color: var(--soft); font-size: .93rem; }
-    .btn-done {
-      margin-top: 24px;
-      width: 100%;
-      padding: 15px;
-      border: none;
-      border-radius: var(--radius-pill);
-      background: var(--crimson);
-      color: #fff;
-      font-family: 'DM Sans', sans-serif;
-      font-size: .96rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
+    /* SUCCESS */
+    .success-view { text-align: center; padding: 8px 0; display: none; }
+    .success-icon { width: 72px; height: 72px; background: #edf7ed; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    .success-view h3 { color: #1e6b1e; font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 8px; }
+    .success-view > p { color: var(--soft); font-size: .92rem; line-height: 1.6; }
+    .success-details { background: var(--crimson-pale); border: 1px solid var(--crimson-border); border-radius: 14px; padding: 14px; margin: 18px 0 8px; text-align: left; }
+    .success-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--crimson-border); font-size: .84rem; }
+    .success-row:last-child { border-bottom: none; }
+    .success-row span:first-child { color: var(--soft); }
+    .success-row span:last-child { font-weight: 600; color: var(--dark); }
+    .btn-done { margin-top: 6px; width: 100%; padding: 15px; border: none; border-radius: var(--radius-pill); background: var(--crimson); color: #fff; font-family: 'DM Sans', sans-serif; font-size: .96rem; font-weight: 600; cursor: pointer; box-shadow: var(--shadow-btn); }
 
-    /* ════════════════════════════════
-       SCROLL REVEAL
-    ════════════════════════════════ */
+    /* REVEAL */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
     .reveal.in { opacity: 1; transform: translateY(0); }
 
-    /* ════════════════════════════════
-       DESKTOP ENHANCEMENTS
-    ════════════════════════════════ */
-    @media (min-width: 640px) {
-      .for-section { margin: 0 24px; }
-      .final-block { margin: 0 24px; }
-    }
+    /* DESKTOP */
+    @media (min-width: 640px) { .for-section { margin: 0 24px; } .final-block { margin: 0 24px; } }
     @media (min-width: 900px) {
       body { background: #f6eeee; }
-      .site-frame {
-        max-width: 960px;
-        margin: 0 auto;
-        background: var(--white);
-        box-shadow: 0 0 80px rgba(192,33,44,.07);
-        border-radius: 0 0 36px 36px;
-        overflow: hidden;
-        min-height: 100vh;
-      }
+      .site-frame { max-width: 960px; margin: 0 auto; background: var(--white); box-shadow: 0 0 80px rgba(192,33,44,.07); border-radius: 0 0 36px 36px; overflow: hidden; min-height: 100vh; }
       nav .nav-inner { max-width: 880px; padding: 15px 48px; }
       .hero { max-width: 880px; padding: 72px 48px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
       .hero-right .photo-card { aspect-ratio: 3/4; border-radius: var(--radius-lg); }
       .photo-section { display: none; }
       .book-cta { max-width: 880px; padding: 0 48px; }
       .section { max-width: 880px; padding: 64px 48px; }
-      .for-section { margin: 0 32px; }
-      .final-block { margin: 0 32px; }
+      .for-section { margin: 0 32px; } .final-block { margin: 0 32px; }
       .testimonials { display: grid; grid-template-columns: 1fr 1fr; }
       footer { max-width: 880px; margin: 0 auto; }
     }
   </style>
 </head>
 <body>
-
 <div class="site-frame">
 
-  <!-- ── NAV ── -->
+  <!-- NAV -->
   <nav>
     <div class="nav-inner">
-      <a class="nav-logo" href="/">
-        <span class="logo-star">✦</span> Project Saana
-      </a>
+      <a class="nav-logo" href="/"><span class="logo-star">✦</span> Project Saana</a>
       <button class="nav-cta" onclick="openModal()">Book a Call</button>
     </div>
   </nav>
 
-  <!-- ── HERO ── -->
+  <!-- HERO -->
   <div class="hero">
-    <!-- Left column (always visible) -->
     <div class="hero-left">
       <div class="hero-badge">✦ Project Saana</div>
       <h1>Clarity<br/>Call</h1>
       <p class="hero-sub">A 20 minute conversation to help you find clarity in your life.</p>
     </div>
-
-    <!-- Right column (desktop only photo) -->
     <div class="hero-right" style="display:none" id="desktopPhoto">
       <div class="photo-card">
-        <!-- Replace src below with your real photo file in the repo -->
-        <img src="saana.jpg" alt="Saana" style="width:100%;height:100%;object-fit:cover;object-position:top">
-      
-        <svg class="photo-graphic" width="120" height="160" viewBox="0 0 120 160" fill="none">
-          <ellipse cx="60" cy="48" rx="30" ry="36" fill="#C0212C"/>
-          <path d="M10 160 Q60 100 110 160" fill="#C0212C"/>
-        </svg>
-        <div class="photo-quote">
-          <p>"Saana helps you see what's been unseen."</p>
-          <span>— Project Saana Client</span>
-        </div>
+        <img src="saana.jpg" alt="Saana" style="width:100%;height:100%;object-fit:cover;object-position:top;position:absolute;inset:0;">
+        <div class="photo-quote"><p>"Saana helps you see what's been unseen."</p><span>— Project Saana Client</span></div>
       </div>
     </div>
   </div>
 
-  <!-- ── PHOTO (mobile) ── -->
+  <!-- PHOTO MOBILE -->
   <div class="photo-section reveal" id="mobilePhoto">
     <div class="photo-card">
-      <!-- Replace src below with your real photo file in the repo -->
-      <img src="saana.jpg" alt="Saana" style="width:100%;height:100%;object-fit:cover;object-position:top">
-      <svg class="photo-graphic" width="120" height="140" viewBox="0 0 120 160" fill="none">
-        <ellipse cx="60" cy="48" rx="30" ry="36" fill="#C0212C"/>
-        <path d="M10 160 Q60 100 110 160" fill="#C0212C"/>
-      </svg>
-      <div class="photo-quote">
-        <p>"Saana helps you see what's been unseen."</p>
-        <span>— Project Saana Client</span>
-      </div>
+      <img src="saana.jpg" alt="Saana" style="width:100%;height:100%;object-fit:cover;object-position:top;position:absolute;inset:0;">
+      <div class="photo-quote"><p>"Saana helps you see what's been unseen."</p><span>— Project Saana Client</span></div>
     </div>
   </div>
 
-  <!-- ── BOOK CTA ── -->
+  <!-- BOOK CTA -->
   <div class="book-cta reveal" style="margin-top:26px;">
-    <button class="btn-book" onclick="openModal()">
-      Book Your Call
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </button>
+    <button class="btn-book" onclick="openModal()">Book Your Call <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
     <div class="meta-pills">
-      <div class="meta-pill">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        20 Minutes
-      </div>
-      <div class="meta-pill">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        Online
-      </div>
-      <div class="meta-pill">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        ₹499
-      </div>
+      <div class="meta-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>20 Minutes</div>
+      <div class="meta-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Online</div>
+      <div class="meta-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>₹499</div>
     </div>
   </div>
 
-  <!-- ── WHAT IS A CLARITY CALL ── -->
+  <!-- WHAT IS -->
   <div class="section reveal">
     <div class="section-tag">About</div>
     <h2>What is a Clarity Call?</h2>
@@ -730,31 +272,19 @@
     <p class="body-text" style="margin-top:12px;">Saana listens deeply, identifies hidden emotional patterns, and helps you formulate one actionable next step to move forward with confidence.</p>
   </div>
 
-  <!-- ── WHAT WE DO ── -->
+  <!-- WHAT WE DO -->
   <div class="section reveal" style="padding-top:0">
     <div class="section-tag">The Call</div>
     <h2>What we do in the call</h2>
-    <ul class="do-list" role="list">
-      <li class="do-item">
-        <div class="check-dot"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#C0212C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        Understand your current struggle
-      </li>
-      <li class="do-item">
-        <div class="check-dot"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#C0212C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        Identify emotional patterns
-      </li>
-      <li class="do-item">
-        <div class="check-dot"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#C0212C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        Shift your perspective
-      </li>
-      <li class="do-item">
-        <div class="check-dot"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#C0212C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        Help you find one clear next step
-      </li>
+    <ul class="do-list">
+      <li class="do-item"><div class="check-dot"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#C0212C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Understand your current struggle</li>
+      <li class="do-item"><div class="check-dot"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#C0212C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Identify emotional patterns</li>
+      <li class="do-item"><div class="check-dot"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#C0212C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Shift your perspective</li>
+      <li class="do-item"><div class="check-dot"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#C0212C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Help you find one clear next step</li>
     </ul>
   </div>
 
-  <!-- ── WHO THIS IS FOR ── -->
+  <!-- WHO -->
   <div class="section reveal" style="padding:0 0 56px;">
     <div class="for-section">
       <div class="section-tag">Who it's for</div>
@@ -768,195 +298,201 @@
     </div>
   </div>
 
-  <!-- ── DETAILS BAR ── -->
-  <div class="section reveal" style="padding-top:0; padding-bottom:56px;">
+  <!-- DETAILS -->
+  <div class="section reveal" style="padding-top:0;padding-bottom:56px;">
     <div class="details-bar">
-      <div class="detail-cell">
-        <svg class="detail-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <div class="detail-label">Duration</div>
-        <div class="detail-value">20 min</div>
-      </div>
-      <div class="detail-cell">
-        <svg class="detail-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        <div class="detail-label">Format</div>
-        <div class="detail-value">Online</div>
-      </div>
-      <div class="detail-cell">
-        <svg class="detail-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        <div class="detail-label">Price</div>
-        <div class="detail-value">₹499</div>
-      </div>
+      <div class="detail-cell"><svg class="detail-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div class="detail-label">Duration</div><div class="detail-value">20 min</div></div>
+      <div class="detail-cell"><svg class="detail-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><div class="detail-label">Format</div><div class="detail-value">Online</div></div>
+      <div class="detail-cell"><svg class="detail-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg><div class="detail-label">Price</div><div class="detail-value">₹499</div></div>
     </div>
   </div>
 
-  <!-- ── TESTIMONIALS ── -->
+  <!-- TESTIMONIALS -->
   <div class="section reveal" style="padding-top:0">
     <div class="section-tag">Stories</div>
     <h2>What people say</h2>
     <div class="testimonials">
-      <div class="t-card">
-        <div class="t-quote">"</div>
-        <p class="t-text">I was spiraling for weeks about a career move. 20 minutes with Saana gave me the exact clarity I needed to say yes.</p>
-        <div class="t-author">
-          <div class="t-avatar">AR</div>
-          <div>
-            <div class="t-name">Ananya R.</div>
-            <div class="t-role">Marketing Executive</div>
-          </div>
-        </div>
-      </div>
-      <div class="t-card">
-        <div class="t-quote">"</div>
-        <p class="t-text">It felt like a heavy fog lifted. She hears the things you aren't saying out loud. Highly recommend.</p>
-        <div class="t-author">
-          <div class="t-avatar">RM</div>
-          <div>
-            <div class="t-name">Rahul M.</div>
-            <div class="t-role">Entrepreneur</div>
-          </div>
-        </div>
-      </div>
+      <div class="t-card"><div class="t-quote">"</div><p class="t-text">I was spiraling for weeks about a career move. 20 minutes with Saana gave me the exact clarity I needed to say yes.</p><div class="t-author"><div class="t-avatar">AR</div><div><div class="t-name">Ananya R.</div><div class="t-role">Marketing Executive</div></div></div></div>
+      <div class="t-card"><div class="t-quote">"</div><p class="t-text">It felt like a heavy fog lifted. She hears the things you aren't saying out loud. Highly recommend.</p><div class="t-author"><div class="t-avatar">RM</div><div><div class="t-name">Rahul M.</div><div class="t-role">Entrepreneur</div></div></div></div>
     </div>
     <p class="coming-soon">More client stories arriving soon…</p>
   </div>
 
-  <!-- ── FINAL CTA ── -->
-  <div class="section reveal" style="padding-top:0; padding-bottom:72px;">
+  <!-- FINAL CTA -->
+  <div class="section reveal" style="padding-top:0;padding-bottom:72px;">
     <div class="final-block">
       <h2>Talk to Saana</h2>
       <p>Choose a slot and get one clear next step today.</p>
-      <button class="btn-book-dark" onclick="openModal()">
-        Book Your Clarity Call
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </button>
+      <button class="btn-book-dark" onclick="openModal()">Book Your Clarity Call <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
     </div>
   </div>
 
-  <!-- ── FOOTER ── -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-logo">✦ Saana</div>
     <p>© 2024 Project Saana. All rights reserved.</p>
     <p><a href="https://instagram.com/project.saana" target="_blank" rel="noopener">@project.saana</a></p>
     <p style="margin-top:8px;"><a href="mailto:hello@urvashisaana.com">hello@urvashisaana.com</a></p>
   </footer>
+</div>
 
-</div><!-- /site-frame -->
-
-<!-- ── WHATSAPP FAB ── -->
-<!-- IMPORTANT: Replace the number below with Saana's real WhatsApp number (with country code, no + or spaces) -->
+<!-- WHATSAPP FAB -->
 <a class="wa-fab" href="https://wa.me/918668324650?text=Hi%20Saana%2C%20I%20want%20to%20book%20a%20Clarity%20Call!" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 32 32" fill="white">
-    <path d="M16 2C8.268 2 2 8.268 2 16c0 2.484.676 4.81 1.854 6.807L2 30l7.393-1.837A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm7.2 19.2c-.3.84-1.74 1.62-2.4 1.68-.66.06-1.26.3-4.26-.9-3.6-1.44-5.88-5.1-6.06-5.34-.18-.24-1.44-1.92-1.44-3.66 0-1.74.9-2.58 1.24-2.94.34-.36.72-.45 1-.45h.72c.24 0 .54-.06.84.66l1.08 2.64c.12.24.06.54-.06.78l-.6.9-.18.24c.24.42 1.02 1.68 2.1 2.58 1.38 1.14 2.52 1.5 2.94 1.68.3.12.66.06.9-.18l.66-.78c.24-.3.48-.24.84-.12l2.58 1.2c.3.12.54.3.54.6v.12z"/>
-  </svg>
+  <svg width="28" height="28" viewBox="0 0 32 32" fill="white"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.484.676 4.81 1.854 6.807L2 30l7.393-1.837A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm7.2 19.2c-.3.84-1.74 1.62-2.4 1.68-.66.06-1.26.3-4.26-.9-3.6-1.44-5.88-5.1-6.06-5.34-.18-.24-1.44-1.92-1.44-3.66 0-1.74.9-2.58 1.24-2.94.34-.36.72-.45 1-.45h.72c.24 0 .54-.06.84.66l1.08 2.64c.12.24.06.54-.06.78l-.6.9-.18.24c.24.42 1.02 1.68 2.1 2.58 1.38 1.14 2.52 1.5 2.94 1.68.3.12.66.06.9-.18l.66-.78c.24-.3.48-.24.84-.12l2.58 1.2c.3.12.54.3.54.6v.12z"/></svg>
   <span class="wa-tooltip">Chat on WhatsApp</span>
 </a>
 
-<!-- ══════════════════════════════════════
-     BOOKING MODAL
-     Connected to Formspree — follow step
-     below to activate email notifications
-════════════════════════════════════════ -->
-<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal" id="modalBox">
+<!-- ════════ MODAL ════════ -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true">
+  <div class="modal">
     <div class="modal-handle"></div>
 
-    <!-- FORM VIEW -->
-    <div id="formView">
-      <h3 id="modalTitle">Book Your Clarity Call</h3>
-      <p class="modal-sub">20 minutes · Online · ₹499 — Fill in your details and Saana will confirm your slot.</p>
-
-      <!--
-        FORMSPREE SETUP (takes 2 minutes, free):
-        1. Go to https://formspree.io and sign up with Saana's email
-        2. Click "New Form", name it "Clarity Call Bookings"
-        3. Copy the form endpoint — looks like: https://formspree.io/f/abcdefgh
-        4. Replace the action URL in the form tag below
-      -->
-      <form id="bookForm" action="https://formspree.io/f/xvzvkkjq" method="POST" novalidate>
-
-        <!-- Hidden fields for Formspree subject line -->
-        <input type="hidden" name="_subject" value="New Clarity Call Booking 🌿" />
-        <input type="hidden" name="_replyto" id="replyTo" value="" />
-
-        <div class="form-row" id="rowName">
-          <label for="inputName">Your Name *</label>
-          <input type="text" id="inputName" name="name" placeholder="e.g. Priya Sharma" autocomplete="name" />
-          <div class="form-error">Please enter your name.</div>
-        </div>
-
-        <div class="form-row" id="rowEmail">
-          <label for="inputEmail">Email Address *</label>
-          <input type="email" id="inputEmail" name="email" placeholder="you@example.com" autocomplete="email" />
-          <div class="form-error">Please enter a valid email.</div>
-        </div>
-
-        <div class="form-row" id="rowPhone">
-          <label for="inputPhone">WhatsApp Number *</label>
-          <input type="tel" id="inputPhone" name="whatsapp" placeholder="+91 98765 43210" autocomplete="tel" />
-          <div class="form-error">Please enter your WhatsApp number.</div>
-        </div>
-
-        <div class="form-row" id="rowSlot">
-          <label for="inputSlot">Preferred Time Slot *</label>
-          <select id="inputSlot" name="preferred_slot">
-            <option value="">Select a slot…</option>
-            <option>Monday — 10:00 AM</option>
-            <option>Monday — 3:00 PM</option>
-            <option>Tuesday — 11:00 AM</option>
-            <option>Wednesday — 4:00 PM</option>
-            <option>Thursday — 10:00 AM</option>
-            <option>Friday — 2:00 PM</option>
-            <option>Saturday — 10:00 AM</option>
-          </select>
-          <div class="form-error">Please choose a time slot.</div>
-        </div>
-
-        <div class="form-row">
-          <label for="inputNote">What's on your mind? (optional)</label>
-          <textarea id="inputNote" name="note" placeholder="Briefly describe what you'd like clarity on…"></textarea>
-        </div>
-
-        <div class="modal-actions">
-          <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
-          <button type="submit" class="btn-submit" id="submitBtn">
-            <span id="btnText">Confirm Booking</span>
-            <div class="spinner" id="spinner"></div>
-          </button>
-        </div>
-      </form>
-    </div>
-
-    <!-- SUCCESS VIEW -->
-    <div class="success-view" id="successView">
-      <div class="success-icon">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1e6b1e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    <!-- STEP 1: DETAILS FORM -->
+    <div id="stepForm">
+      <div class="steps-bar">
+        <div class="step-item active"><div class="step-num">1</div> Details</div>
+        <div class="step-line"></div>
+        <div class="step-item"><div class="step-num">2</div> Pay ₹499</div>
+        <div class="step-line"></div>
+        <div class="step-item"><div class="step-num">3</div> Done</div>
       </div>
-      <h3>You're booked! 🌿</h3>
-      <p style="margin-top:8px;">Saana will reach out on WhatsApp to confirm your slot. See you soon!</p>
-      <button class="btn-done" onclick="closeModal()">Done</button>
+      <h3>Your Details</h3>
+      <p class="modal-sub">Fill in your info — next you'll pay ₹499 via UPI to confirm your slot.</p>
+      <div class="form-row" id="rowName">
+        <label for="inputName">Full Name *</label>
+        <input type="text" id="inputName" placeholder="e.g. Priya Sharma" autocomplete="name" />
+        <div class="form-error">Please enter your name.</div>
+      </div>
+      <div class="form-row" id="rowEmail">
+        <label for="inputEmail">Email Address *</label>
+        <input type="email" id="inputEmail" placeholder="you@example.com" autocomplete="email" />
+        <div class="form-error">Please enter a valid email.</div>
+      </div>
+      <div class="form-row" id="rowPhone">
+        <label for="inputPhone">WhatsApp Number *</label>
+        <input type="tel" id="inputPhone" placeholder="+91 98765 43210" autocomplete="tel" />
+        <div class="form-error">Please enter your WhatsApp number.</div>
+      </div>
+      <div class="form-row" id="rowSlot">
+        <label for="inputSlot">Preferred Time Slot *</label>
+        <select id="inputSlot">
+          <option value="">Select a slot…</option>
+          <option>Monday — 10:00 AM</option>
+          <option>Monday — 3:00 PM</option>
+          <option>Tuesday — 11:00 AM</option>
+          <option>Wednesday — 4:00 PM</option>
+          <option>Thursday — 10:00 AM</option>
+          <option>Friday — 2:00 PM</option>
+          <option>Saturday — 10:00 AM</option>
+        </select>
+        <div class="form-error">Please choose a time slot.</div>
+      </div>
+      <div class="form-row">
+        <label for="inputNote">What's on your mind? (optional)</label>
+        <textarea id="inputNote" placeholder="Briefly describe what you'd like clarity on…"></textarea>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+        <button class="btn-next" onclick="goToPayment()">Next: Pay ₹499 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+      </div>
     </div>
+
+    <!-- STEP 2: UPI PAYMENT -->
+    <div class="upi-view" id="stepPayment">
+      <div class="steps-bar">
+        <div class="step-item done"><div class="step-num">✓</div> Details</div>
+        <div class="step-line"></div>
+        <div class="step-item active"><div class="step-num">2</div> Pay ₹499</div>
+        <div class="step-line"></div>
+        <div class="step-item"><div class="step-num">3</div> Done</div>
+      </div>
+
+      <div class="upi-amount-row">
+        <div class="upi-amount">₹499</div>
+        <div class="upi-amount-label">Pay to Project Saana · One-time · No hidden charges</div>
+      </div>
+
+      <div class="upi-box">
+        <div class="qr-wrapper"><div id="qrcode"></div></div>
+        <p style="font-size:.76rem;color:var(--soft);margin-bottom:6px;">Or enter UPI ID manually</p>
+        <div class="upi-id-row">
+          <span class="upi-id-text">bhartiurvashi0489@oksbi</span>
+          <button class="copy-btn" onclick="copyUPI()">Copy</button>
+        </div>
+        <div class="upi-apps">
+          <div class="upi-app"><div class="upi-app-icon">📱</div>GPay</div>
+          <div class="upi-app"><div class="upi-app-icon">💜</div>PhonePe</div>
+          <div class="upi-app"><div class="upi-app-icon">🔵</div>Paytm</div>
+          <div class="upi-app"><div class="upi-app-icon">🏦</div>Any UPI</div>
+        </div>
+        <div class="upi-steps-list">
+          <div class="upi-step"><div class="upi-step-num">1</div>Open any UPI app (GPay, PhonePe, Paytm…)</div>
+          <div class="upi-step"><div class="upi-step-num">2</div>Scan QR code above OR enter the UPI ID manually</div>
+          <div class="upi-step"><div class="upi-step-num">3</div>Enter amount <strong>₹499</strong> → Pay to <strong>Project Saana</strong></div>
+          <div class="upi-step"><div class="upi-step-num">4</div>Take a screenshot of the payment success screen</div>
+          <div class="upi-step"><div class="upi-step-num">5</div>Upload that screenshot below to confirm your booking ↓</div>
+        </div>
+      </div>
+
+      <div class="upload-section">
+        <label class="upload-label">📸 Upload Payment Screenshot *</label>
+        <div class="upload-area" id="uploadArea">
+          <input type="file" id="screenshotInput" accept="image/*" onchange="handleFile(this)" />
+          <div class="upload-icon">📸</div>
+          <div class="upload-text">Tap here to upload your screenshot<br><strong>JPG or PNG</strong></div>
+        </div>
+        <div class="upload-preview" id="uploadPreview">
+          <img id="previewImg" src="" alt="Payment screenshot" />
+          <div class="upload-preview-name" id="previewName"></div>
+        </div>
+        <div class="upload-error" id="uploadError">Please upload your payment screenshot to confirm.</div>
+      </div>
+
+      <button class="btn-confirm-pay" id="confirmBtn" onclick="submitBooking()">
+        <span id="confirmText">Confirm My Booking ✓</span>
+        <div class="spinner" id="confirmSpinner"></div>
+      </button>
+      <p class="wa-help">Having trouble paying? <a href="https://wa.me/918668324650?text=Hi%20Saana%2C%20I%20need%20help%20with%20my%20payment!" target="_blank">Message Saana on WhatsApp</a></p>
+    </div>
+
+    <!-- STEP 3: SUCCESS -->
+    <div class="success-view" id="stepSuccess">
+      <div class="success-icon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1e6b1e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <h3>You're booked! 🌿</h3>
+      <p>Payment received. Saana will confirm your slot on WhatsApp within a few hours. Check your email too!</p>
+      <div class="success-details" id="successDetails"></div>
+      <button class="btn-done" onclick="closeModal()">Done ✓</button>
+    </div>
+
   </div>
 </div>
 
 <script>
-  /* ── Responsive: show desktop photo ── */
+  const UPI_ID    = 'bhartiurvashi0489@oksbi';
+  const UPI_NAME  = 'Project Saana';
+  const FORMSPREE = 'https://formspree.io/f/xvzvkkjq';
+
+  let bookingData = {};
+  let screenshotFile = null;
+  let qrDone = false;
+
+  /* Desktop photo */
   if (window.innerWidth >= 900) {
     const dp = document.getElementById('desktopPhoto');
     if (dp) dp.style.display = 'block';
   }
 
-  /* ── Scroll reveal ── */
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObserver.unobserve(e.target); } });
+  /* Scroll reveal */
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
   }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-  /* ── Modal ── */
+  /* Modal */
   function openModal() {
     document.getElementById('overlay').classList.add('open');
     document.body.style.overflow = 'hidden';
-    document.getElementById('formView').style.display = 'block';
-    document.getElementById('successView').style.display = 'none';
+    show('stepForm');
   }
   function closeModal() {
     document.getElementById('overlay').classList.remove('open');
@@ -967,58 +503,136 @@
   });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-  /* ── Form validation + Formspree submit ── */
-  document.getElementById('bookForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+  function show(id) {
+    ['stepForm','stepPayment','stepSuccess'].forEach(s => {
+      const el = document.getElementById(s);
+      if (el) el.style.display = s === id ? 'block' : 'none';
+    });
+    document.querySelector('.modal').scrollTop = 0;
+  }
+
+  /* Step 1 → Step 2 */
+  function goToPayment() {
     let valid = true;
-
-    const fields = [
-      { id: 'inputName',  row: 'rowName',  check: v => v.trim().length > 1 },
-      { id: 'inputEmail', row: 'rowEmail', check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
-      { id: 'inputPhone', row: 'rowPhone', check: v => v.trim().length > 6 },
-      { id: 'inputSlot',  row: 'rowSlot',  check: v => v !== '' },
+    const checks = [
+      { id:'inputName',  row:'rowName',  ok: v => v.trim().length > 1 },
+      { id:'inputEmail', row:'rowEmail', ok: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+      { id:'inputPhone', row:'rowPhone', ok: v => v.trim().length > 6 },
+      { id:'inputSlot',  row:'rowSlot',  ok: v => v !== '' },
     ];
-
-    fields.forEach(f => {
-      const el = document.getElementById(f.id);
-      const row = document.getElementById(f.row);
-      if (!f.check(el.value)) { row.classList.add('has-error'); valid = false; }
+    checks.forEach(c => {
+      const el = document.getElementById(c.id);
+      const row = document.getElementById(c.row);
+      if (!c.ok(el.value)) { row.classList.add('has-error'); valid = false; }
       else row.classList.remove('has-error');
     });
-
     if (!valid) return;
 
-    // Sync reply-to
-    document.getElementById('replyTo').value = document.getElementById('inputEmail').value;
+    bookingData = {
+      name:  document.getElementById('inputName').value.trim(),
+      email: document.getElementById('inputEmail').value.trim(),
+      phone: document.getElementById('inputPhone').value.trim(),
+      slot:  document.getElementById('inputSlot').value,
+      note:  document.getElementById('inputNote').value.trim() || 'Not provided',
+    };
 
-    // Show loading
-    const btn = document.getElementById('submitBtn');
-    document.getElementById('btnText').style.display = 'none';
-    document.getElementById('spinner').style.display = 'block';
+    show('stepPayment');
+
+    if (!qrDone) {
+      const upiLink = `upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(UPI_NAME)}&am=499&cu=INR&tn=${encodeURIComponent('Clarity Call Booking')}`;
+      document.getElementById('qrcode').innerHTML = '';
+      new QRCode(document.getElementById('qrcode'), {
+        text: upiLink, width: 176, height: 176,
+        colorDark: '#180a0b', colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.H
+      });
+      qrDone = true;
+    }
+  }
+
+  /* Copy UPI ID */
+  function copyUPI() {
+    navigator.clipboard.writeText(UPI_ID).then(() => {
+      const btn = document.querySelector('.copy-btn');
+      const orig = btn.textContent;
+      btn.textContent = 'Copied ✓';
+      btn.style.background = '#2a7a2a';
+      btn.style.color = '#fff';
+      btn.style.borderColor = '#2a7a2a';
+      setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; btn.style.borderColor = ''; }, 2200);
+    });
+  }
+
+  /* File upload */
+  function handleFile(input) {
+    const file = input.files[0];
+    if (!file) return;
+    screenshotFile = file;
+    const reader = new FileReader();
+    reader.onload = e => {
+      document.getElementById('previewImg').src = e.target.result;
+      document.getElementById('previewName').textContent = '✓ ' + file.name;
+      document.getElementById('uploadPreview').style.display = 'block';
+      document.getElementById('uploadArea').style.borderColor = '#2a7a2a';
+      document.getElementById('uploadArea').style.background = '#edf7ed';
+      document.getElementById('uploadError').style.display = 'none';
+    };
+    reader.readAsDataURL(file);
+  }
+
+  const ua = document.getElementById('uploadArea');
+  ua.addEventListener('dragover', e => { e.preventDefault(); ua.classList.add('dragover'); });
+  ua.addEventListener('dragleave', () => ua.classList.remove('dragover'));
+  ua.addEventListener('drop', e => {
+    e.preventDefault(); ua.classList.remove('dragover');
+    const f = e.dataTransfer.files[0];
+    if (f && f.type.startsWith('image/')) { screenshotFile = f; handleFile({ files: [f] }); }
+  });
+
+  /* Submit */
+  async function submitBooking() {
+    if (!screenshotFile) {
+      document.getElementById('uploadError').style.display = 'block';
+      return;
+    }
+    const btn = document.getElementById('confirmBtn');
+    document.getElementById('confirmText').style.display = 'none';
+    document.getElementById('confirmSpinner').style.display = 'block';
     btn.disabled = true;
 
     try {
-      const res = await fetch(this.action, {
-        method: 'POST',
-        body: new FormData(this),
-        headers: { 'Accept': 'application/json' }
-      });
+      const fd = new FormData();
+      fd.append('name',           bookingData.name);
+      fd.append('email',          bookingData.email);
+      fd.append('whatsapp',       bookingData.phone);
+      fd.append('preferred_slot', bookingData.slot);
+      fd.append('note',           bookingData.note);
+      fd.append('_subject',       `💳 New Paid Booking — ${bookingData.name}`);
+      fd.append('payment_method', 'UPI');
+      fd.append('amount_paid',    '₹499');
+      fd.append('attachment',     screenshotFile, screenshotFile.name);
+
+      const res = await fetch(FORMSPREE, { method:'POST', body: fd, headers:{ Accept:'application/json' } });
 
       if (res.ok) {
-        document.getElementById('formView').style.display = 'none';
-        document.getElementById('successView').style.display = 'block';
-        this.reset();
+        document.getElementById('successDetails').innerHTML = `
+          <div class="success-row"><span>Name</span><span>${bookingData.name}</span></div>
+          <div class="success-row"><span>Slot booked</span><span>${bookingData.slot}</span></div>
+          <div class="success-row"><span>Amount paid</span><span style="color:#2a7a2a">₹499 ✓</span></div>
+          <div class="success-row"><span>WhatsApp</span><span>${bookingData.phone}</span></div>
+        `;
+        show('stepSuccess');
       } else {
-        alert('Something went wrong. Please try again or message Saana on WhatsApp.');
+        alert('Something went wrong. Please message Saana on WhatsApp directly.');
       }
     } catch {
       alert('Network error. Please check your connection and try again.');
     } finally {
-      document.getElementById('btnText').style.display = 'inline';
-      document.getElementById('spinner').style.display = 'none';
+      document.getElementById('confirmText').style.display = 'inline';
+      document.getElementById('confirmSpinner').style.display = 'none';
       btn.disabled = false;
     }
-  });
+  }
 </script>
 </body>
 </html>
